@@ -1,4 +1,6 @@
 from random import randint
+
+
 def build_standard_deck():
     list_deck = []
     for i in ['S','D','C','H']:
@@ -9,7 +11,6 @@ def build_standard_deck():
         list_deck.append({'rank': 'K', 'suite': i})
         list_deck.append({'rank': 'A', 'suite': i})
     return list_deck
-print(build_standard_deck())
 
 
 def shuffle_by_suit(deck: list[dict], swaps: int = 5000):
@@ -21,5 +22,3 @@ def shuffle_by_suit(deck: list[dict], swaps: int = 5000):
             j = randint(0, len(deck) - 1)
         deck[i], deck[j] = deck[j], deck[i]
     return deck
-
-print(shuffle_by_suit(build_standard_deck()))
